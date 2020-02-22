@@ -36,15 +36,6 @@ body{
     width: 1020px;
 }
 
-/* .check{
-    position: absolute;
-    top: 0px;
-    left: 300px;
-    width: 425px;
-    height: 269px;
-    background-color: red;
-} */
-
 header{
     height: 89px;
     background-color: #2d303a;
@@ -110,11 +101,11 @@ header > nav > ul > div{
 }
 
 .sliderBlock .content > .back {
-    background-position: 0 50%;
+    background-position: 2px 281px;
 }
 
 .sliderBlock .content > .next {
-    background-position: 0 50%;
+    background-position: 0 286px;
     transform: rotate(180deg);
 }
 
@@ -178,10 +169,10 @@ header > nav > ul > div{
     position: absolute;
     top: 163px;
     left: -35px;
-    width: 333px;
-    height: 188px;
+    width: 334px;
+    height: 189px;
     transform: rotate(90deg) scale(-1, 1);
-    background: url(assets/img/background2.png) -126px -119px no-repeat; 
+    background: url(assets/img/background2.png) -124px -118px no-repeat; 
 }
 
 /* **************************************************************************** */
