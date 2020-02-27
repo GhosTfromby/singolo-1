@@ -23,6 +23,14 @@
     padding: 0;
 }
 
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
 
 html{
     height: 100%;
@@ -78,6 +86,7 @@ p {
     height: 20px;
     padding-left: 7px;
     padding-right: 6px;
+    padding-bottom: 20px;
     margin-left: 1px;
     margin-right: 5px;
     font-size: 12px;
@@ -86,6 +95,12 @@ p {
     line-height: 1.7em;
     border: 1px solid #666d89;
     border-radius: 5px;
+}
+
+.workExamples .filters .filter:hover,
+.workExamples .filters .active{
+    color: #dedede;
+    border-color: #dedede;
 }
 
 .workExamples .filters .filter:nth-child(3){
@@ -106,7 +121,6 @@ p {
     overflow: hidden;
     width:220px;
     height: 187px;
-    background-color: violet;
 }
 
 /* **************************************************************************** */
@@ -138,7 +152,6 @@ p {
 
 .individual .individualPhoto{
     display: block;
-    background: rgb(94, 124, 76);
     width: 300px;
     height: 300px;
 }
@@ -188,4 +201,8 @@ p {
 
 .aboutUs .links .linkedIn{
     background-image: url(assets/img/linkedin.png);
+}
+
+.aboutUs .links .link:hover{
+    background:#666d89;
 }
