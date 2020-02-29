@@ -101,6 +101,7 @@ p {
 .workExamples .filters .active{
     color: #dedede;
     border-color: #dedede;
+    transition: 0.5s;
 }
 
 .workExamples .filters .filter:nth-child(3){
@@ -188,21 +189,40 @@ p {
 }
 
 .aboutUs .links .facebook{
-    background-image: url(assets/img/facebook.png);
+    background-image: url(assets/img/icon_facebook.png);
 }
 
 .aboutUs .links .googlePlus{
-    background-image: url(assets/img/google+.png);
+    background-image: url(assets/img/icon_google+.png);
 }
 
 .aboutUs .links .twitter{
-    background-image: url(assets/img/twitter.png);
+    background-image: url(assets/img/icon_twitter.png);
 }
 
 .aboutUs .links .linkedIn{
-    background-image: url(assets/img/linkedin.png);
+    background-image: url(assets/img/icon_linkedin.png);
 }
 
 .aboutUs .links .link:hover{
     background:#666d89;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+}
+
+.aboutUs .links .facebook:hover{
+    background-image: url(assets/img/icon_hover_facebook.png);
+}
+
+.aboutUs .links .googlePlus:hover{
+    background-image: url(assets/img/icon_hover_google+.png);
+}
+
+.aboutUs .links .twitter:hover{
+    background-image: url(assets/img/icon_hover_twitter.png);
+}
+
+.aboutUs .links .linkedIn:hover{
+    background-image: url(assets/img/icon_hover_linkedin.png);
 }
