@@ -83,7 +83,7 @@ p {
 }
 
 header{
-    height: 89px;
+    height: 86px;
     color: #ffffff;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
@@ -91,7 +91,7 @@ header{
 
 header > nav {
     float: right;
-    margin-top: 38px;
+    margin-top: 35px;
     margin-right: 35px;
 }
 
@@ -103,7 +103,7 @@ header > .logo{
 header > .logo > .logoElement{
     display: inline-block;
     float: left;
-    margin-top: 29px;
+    margin-top: 26px;
     font-size: 25px;
     letter-spacing: -0.7px;
     text-transform: uppercase;
@@ -113,23 +113,23 @@ header > .logo > span {
     color: #f06c64;
 }
 
-header > nav > ul > li, 
-header > nav > ul > div{
+header > nav > ul > .pointMenu, 
+header > nav > ul > .delimiter{
     display: inline;
-    margin: 0 5px;
+    margin: 0 4.6px;
     font-size: 12px;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.1px;
     transition: 0.5s;
 }
 
 
-header > nav > ul > li:hover,
+header > nav > ul > .pointMenu:hover,
 header > nav > ul > .active{
     cursor: pointer;
     color: #f06c64;
 }
 
-header > nav > ul > div{
+header > nav > ul > .delimiter{
     color: #494e62
 }
 
