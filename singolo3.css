@@ -1,0 +1,276 @@
+@font-face {
+    font-family: "Lato Bold";
+    src: url(assets/fonts/Lato-Bold.ttf); 
+   }
+
+@font-face {
+    font-family: "Lato Black";
+    src: url(assets/fonts/Lato-Black.ttf); 
+}
+
+@font-face {
+    font-family: "Lato Light";
+    src: url(assets/fonts/Lato-Light.ttf); 
+}
+
+@font-face {
+    font-family: "Lato Regular";
+    src: url(assets/fonts/Lato-Regular.ttf); 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a:hover , a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+   
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+html{
+    height: 100%;
+    font-family: "Lato Bold", "Arial", sans-serif;
+    color: #666d89;
+    background-color: #ffffff;
+}
+
+body{
+    width: 1020px;
+    min-height: 100%;
+    margin: 0 auto;  
+}
+
+h2 {
+    padding-bottom: 18px;
+    font-size: 30px;
+    font-family: "Lato Black";
+    letter-spacing: -0.25px;
+}
+
+p {
+    font-size: 18px;
+    font-family: "Lato Light";
+    letter-spacing: -0.04px;
+    line-height: 1.7em;
+}
+
+
+.content{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.getAQuote{
+    display: block;
+    height: 589px;
+    padding-top: 59px;
+    color: #f0d8d9;
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
+}
+
+.getAQuoteDescription{
+    display: block;
+    height: 120px;
+    overflow: hidden;
+}
+
+.formAndContact .form{
+    display: inline-block;
+    vertical-align: top;
+    width: 591px;
+    margin-top: 38px;
+}
+
+.formAndContact .form > input::placeholder,
+.formAndContact .form > textarea::placeholder {
+    color: #f48c8f;
+    font-size: 12px;
+    font-family: "Lato Regular";
+    letter-spacing: 0.1px;
+  }
+
+.formAndContact .form > textarea{
+    height: 194px;
+    resize: none;
+    line-height: 2.3;
+    
+}
+
+.formAndContact .form > button{
+    width: 80px;
+    text-transform: uppercase;
+}
+
+.form-element{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 4px 14px;
+    margin-bottom: 16px;
+    color: #ffffff;
+    background-color: #d6564f;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: "Lato Regular";
+    letter-spacing: 0.1px;
+}
+
+.form-element:hover{
+    background-color: #d6564fa1;
+}
+
+.form-element:focus,
+.form-element:hover:focus {
+    outline: none;
+    color: #2d303a;
+    background: #f0d8d9; 
+}
+
+.contactInformation{
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    margin-top: 36px;
+    width: 300px;
+    margin-left: 10px;
+}
+
+.contactInformation > h3{
+    font-size: 18px;
+    font-family: "Lato Black";
+    letter-spacing: 0.1px;
+}
+
+.contactInformation > p{
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    font-family: "Lato Regular";
+    text-align: justify;
+    letter-spacing: 0.1px;
+    line-height: 1.857;
+}
+
+.contactInformation ul{
+    margin-top: 20px;
+}
+
+.contactInformation ul li > span{
+    display: inline-block;
+    width: 13px;
+}
+
+.contactInformation ul li > span{
+    display: inline-block;
+    width: 13px;
+    margin-right: 7px;
+}
+
+.content .location > span > img{
+    margin-left: 3px;
+    margin-top: 5px;
+    vertical-align: top;
+}
+
+.contactInformation ul li {
+    display: block;
+    height: 22px;
+    font-size: 12px;
+
+    font-family: "Lato Regular";
+    letter-spacing: -0.1px;
+    line-height: 1.807;
+}
+
+/* **************************************************************************** */
+
+footer{
+    height: 76px;
+    background-color: #2d303a;
+}
+
+.copyright{
+    margin-top: 27px;
+    margin-left: 1px;
+    font-size: 12px;
+    font-family: "Lato Regular";
+    letter-spacing: -0.13px;
+    line-height: 1.797;  
+}
+
+.footerElement{
+    display: inline-block;
+}
+
+
+.links{
+    float: right;
+    margin-top: 22px;
+}
+
+.links .link{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 1px solid #666d89;
+    border-radius: 50%;
+}
+
+.links .facebook{
+    background-image: url(assets/img/icon_facebook.png);
+}
+
+.links .googlePlus{
+    background-image: url(assets/img/icon_google+.png);
+}
+
+.links .twitter{
+    background-image: url(assets/img/icon_twitter.png);
+}
+
+.links .linkedIn{
+    background-image: url(assets/img/icon_linkedin.png);
+    margin-right: 0px;
+}
+
+.links .link:hover{
+    background:#666d89;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+}
+
+.links .facebook:hover{
+    background-image: url(assets/img/icon_hover_facebook.png);
+}
+
+.links .googlePlus:hover{
+    background-image: url(assets/img/icon_hover_google+.png);
+}
+
+.links .twitter:hover{
+    background-image: url(assets/img/icon_hover_twitter.png);
+}
+
+.links .linkedIn:hover{
+    background-image: url(assets/img/icon_hover_linkedin.png);
+}
