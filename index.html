@@ -15,39 +15,52 @@
             <h1 class="logoElement">singolo</h1><span class="logoElement">*</span>
         </div>
         <nav>
-            <ul>
-                <li class="pointMenu active"><a href="#">HOME</a></li>
+            <ul id="menu">
+                <li class="pointMenu"><a href="#" class="active">HOME</a></li>
                 <li class="delimiter">·</li>
-                <li class="pointMenu"><a href="#">SERVICES</a></li>
+                <li class="pointMenu"><a href="#services">SERVICES</a></li>
                 <li class="delimiter">·</li>
-                <li class="pointMenu"><a href="#">PORTFOLIO</a></li>
+                <li class="pointMenu"><a href="#portfolio">PORTFOLIO</a></li>
                 <li class="delimiter">·</li>
-                <li class="pointMenu"><a href="#">ABOUT</a></li>
+                <li class="pointMenu"><a href="#aboutUs">ABOUT</a></li>
                 <li class="delimiter">·</li>
-                <li class="pointMenu"><a href="#">CONTACT</a></li>
+                <li class="pointMenu"><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="sliderBlock">
-            <div class="content">
-                <div class="arrow back"></div>
-                <div class="slider">
-                    <div class="phone phoneLeft">
+        <section id="sliderBlock" class="sliderBlock">
+            <div id="slider" class="slider">
+                <div class="slide slide1 active">
+                    <div id="phone1" class="phone phoneLeft">
+                        <div class="phoneLeftBackground"></div>
                     </div>
-                    <div class="phone phoneRight">
+                    <div id="phone2" class="phone phoneRight">
+                        <div class="phoneRightBackground"></div>
                     </div>
                 </div>
-                <div class="arrow next"></div>
+                <div class="slide slide2">
+                    <div class="phone phone1">
+                    </div>
+                    <div class="phone phone2">
+                    </div>
+                    <div id="phone3" class="phone phone3">
+                        <div class="phoneCenter"></div>
+                    </div>
+                </div>
             </div>
+            <div id="back" class="arrow back"></div>
+            <div id="next" class="arrow next"></div>
         </section>
-        <section class="services">
+        <section id="services" class="services">
             <article class="content">
                 <section class="aboutService">
                     <h2>Our Services</h2>
                     <p>
-                        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor 
-                        ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo
+                        luctus, nisi erat porttitor
+                        ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                        condimentum nibh.
                     </p>
                 </section>
                 <section class="servicePoints">
@@ -123,7 +136,7 @@
                 </section>
             </article>
         </section>
-        <section class="portfolio">
+        <section id="portfolio" class="portfolio">
             <article class="content">
                 <section class="portfolioDescription">
                     <h2>
@@ -134,14 +147,14 @@
                     </p>
                 </section>
                 <section class="workExamples">
-                    <div class="filters">
+                    <div id="filters" class="filters">
                         <button class="filter active">All</button>
                         <button class="filter">Web Design</button>
                         <button class="filter">Graphic Design</button>
                         <button class="filter">Artwork</button>
-                        
+
                     </div>
-                    <ul>
+                    <ul id="workExamples">
                         <li><img src="assets/img/portfolio_1.jpg" alt="portfolio"></li>
                         <li><img src="assets/img/portfolio_2.jpg" alt="portfolio"></li>
                         <li><img src="assets/img/portfolio_3.jpg" alt="portfolio"></li>
@@ -158,7 +171,7 @@
                 </section>
             </article>
         </section>
-        <section class="aboutUs">
+        <section id="aboutUs" class="aboutUs">
             <article class="content">
                 <section class="aboutUsAll">
                     <h2>
@@ -223,7 +236,7 @@
                 </section>
             </article>
         </section>
-        <section class="getAQuote">
+        <section id="contact" class="getAQuote">
             <article class="content">
                 <section class="getAQuoteDescription">
                     <h2>
@@ -246,7 +259,7 @@
                         <input id="input-subject" class="form-element" type="text" name="subject" placeholder="Subject">
                         <textarea id="input-details" class="form-element" name="details" cols="50" rows="15"
                             placeholder="Describe your project in detail..."></textarea>
-                        <button class="form-element">Submit</button>
+                        <button id="submitForm" class="form-element">Submit</button>
                     </form>
                     <div class="contactInformation">
                         <h3>Contact Information</h3>
@@ -267,7 +280,7 @@
                                 <span>
                                     <img src="assets/img/icon_phone.png" alt="icon_phone">
                                 </span>
-                                
+
                                 <a href="tel:035283318635" class="phone">03528 331 86 35</a>
                             </li>
                             <li>
@@ -280,6 +293,17 @@
                     </div>
                 </section>
             </article>
+        </section>
+        <section class="feedback_ok" id="feedback_ok">
+            <div class="feedback_ok_close" id="feedback_ok_close"></div>
+            <div class="feedback_ok_block">
+                <div class="imge">
+                    <div class="cl1"></div>
+                    <div class="cl2"></div>
+                </div>
+                <p>Мы скоро с вами свяжимся</p>
+                <button>OK</button>
+            </div>
         </section>
     </main>
     <footer>
@@ -295,5 +319,7 @@
             </div>
         </article>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
