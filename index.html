@@ -35,9 +35,11 @@
                     <div id="phone1" class="phone phoneLeft">
                         <div class="phoneLeftBackground"></div>
                     </div>
+                    <div class="phoneLeftShadow"></div>
                     <div id="phone2" class="phone phoneRight">
                         <div class="phoneRightBackground"></div>
                     </div>
+                    <div class="phoneRightShadow"></div>
                 </div>
                 <div class="slide slide2">
                     <div class="phone phone1">
@@ -47,6 +49,7 @@
                     <div id="phone3" class="phone phone3">
                         <div class="phoneCenter"></div>
                     </div>
+                    <div class="phoneCenterShadow"></div>
                 </div>
             </div>
             <div id="back" class="arrow back"></div>
@@ -251,15 +254,15 @@
                     </p>
                 </section>
                 <section class="formAndContact">
-                    <form class="form" action="#" method="POST">
+                    <form class="form"  onsubmit="form();return false">
                         <input id="input-name" class="form-element" type="text" name="name"
                             placeholder="Name (Required)" required>
                         <input id="input-email" class="form-element" type="email" name="email"
                             placeholder="Email (Required)" required>
-                        <input id="input-subject" class="form-element" type="text" name="subject" placeholder="Subject">
+                        <input id="input-subject" class="form-element" type="text" name="subject" maxlength="50" placeholder="Subject">
                         <textarea id="input-details" class="form-element" name="details" cols="50" rows="15"
                             placeholder="Describe your project in detail..."></textarea>
-                        <button id="submitForm" class="form-element">Submit</button>
+                        <button id="submitForm" class="formButton">SEND</button>
                     </form>
                     <div class="contactInformation">
                         <h3>Contact Information</h3>
@@ -294,15 +297,16 @@
                 </section>
             </article>
         </section>
-        <section class="feedback_ok" id="feedback_ok">
-            <div class="feedback_ok_close" id="feedback_ok_close"></div>
+        <section id="submitFormOk" class="feedback_ok displayNone">
+            <div id="feedback_ok_close" class="feedback_ok_close"></div>
             <div class="feedback_ok_block">
                 <div class="imge">
                     <div class="cl1"></div>
                     <div class="cl2"></div>
                 </div>
-                <p>Мы скоро с вами свяжимся</p>
-                <button>OK</button>
+                <h2>The letter was sent </h2>
+                <div id="message" class="message"></div>
+                <button id="submitFormOkClose" class="form-element">OK</button>
             </div>
         </section>
     </main>
