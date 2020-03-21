@@ -20,8 +20,8 @@ const INPUT_DETAILS = document.getElementById('input-details')
 let SLIDER_ACTIVE_BLOCK = 1
 let SLIDER_ACTIVE_BLOCK_PREW = 1
 
-
 MENU.addEventListener('click', (event) => {
+
     MENU.querySelectorAll('li > a').forEach(el => { el.classList.remove('active') });
     event.target.classList.add('active');
 })
@@ -42,8 +42,8 @@ NEXT.onclick = () => {
     SLIDER.querySelectorAll('div > .slide')[SLIDER_ACTIVE_BLOCK_PREW - 1].classList.add('active');
     let i = 0
     let fanctionNew = () => {
-        if (i<101){
-            sliderLeft((SLIDER.querySelectorAll('div > .slide')[SLIDER_ACTIVE_BLOCK - 1]), (-100+i))
+        if (i < 101) {
+            sliderLeft((SLIDER.querySelectorAll('div > .slide')[SLIDER_ACTIVE_BLOCK - 1]), (-100 + i))
             sliderLeft((SLIDER.querySelectorAll('div > .slide')[SLIDER_ACTIVE_BLOCK_PREW - 1]), i)
             i++
             setTimeout(fanctionNew, 5)
@@ -66,7 +66,7 @@ BACK.onclick = () => {
     SLIDER.querySelectorAll('div > .slide')[SLIDER_ACTIVE_BLOCK_PREW - 1].classList.add('active');
     let i = 100
     let fanctionNew = () => {
-        if (i>-1){
+        if (i > -1) {
             sliderLeft((SLIDER.querySelectorAll('div > .slide')[SLIDER_ACTIVE_BLOCK - 1]), i)
             sliderLeft((SLIDER.querySelectorAll('div > .slide')[SLIDER_ACTIVE_BLOCK_PREW - 1]), (i - 100))
             i--
@@ -74,7 +74,7 @@ BACK.onclick = () => {
         }
     }
     fanctionNew()
-    
+
 }
 
 
@@ -191,3 +191,35 @@ let form = () => {
 submitFormOkClose.onclick = () => {
     SUBMIT_FORM_OK.classList.add('displayNone')
 }
+
+
+
+let onScroll = (ev) => {
+    let position = window.scrollY
+    let winHeight = document.documentElement.clientHeight
+
+
+    document.querySelectorAll('main>section').forEach((el) => {
+        if (winHeight < el.offsetHeight) {
+            if (el.offsetTop <= (position + 95) && (el.offsetTop + el.offsetHeight) > (position + 95)) {
+                MENU.querySelectorAll('li > a').forEach(a => {
+                    a.classList.remove('active')
+                    if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                        a.classList.add('active')
+                    }
+                });
+            }
+        } else {
+            if (el.offsetTop - (winHeight - el.offsetHeight) <= (position + 95) && (winHeight - el.offsetHeight + el.offsetTop) > (position + 95) && el.offsetHeight !== 0) {
+                MENU.querySelectorAll('li > a').forEach(a => {
+                    a.classList.remove('active')
+                    if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                        a.classList.add('active')
+                    }
+                });
+            }
+        }
+    })
+}
+
+document.addEventListener('scroll', onScroll)

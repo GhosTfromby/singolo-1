@@ -38,6 +38,7 @@ html{
     color: #666d89;
     background-color: #ffffff;
     scroll-behavior: smooth;
+    
 }
 
 
@@ -54,6 +55,13 @@ button {
     color: inherit;
     background-color: transparent;
     cursor: pointer;
+}
+
+#services,
+#portfolio,
+#aboutUs,
+#contact{
+    scroll-margin-top: 95px;
 }
 
 button:active, button:focus {
