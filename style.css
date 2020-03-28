@@ -1213,7 +1213,13 @@ footer{
 }
 
 @media screen and (max-width: 767px){
-
+    #services,
+    #portfolio,
+    #aboutUs,
+    #contact{
+        scroll-margin-top: 71px;
+    }
+    
 
     .content {
         width: 83%;
@@ -1283,7 +1289,6 @@ footer{
     
     .activeMenu{
         transform: rotate(0deg);
-        color: #f06c64;
         letter-spacing: 3px;
         transition: 0.5s;
     }
