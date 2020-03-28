@@ -11,10 +11,11 @@
 
 <body>
     <header>
-        <div class="logo">
+        <div class="logo" id="logo">
             <h1 class="logoElement">singolo</h1><span class="logoElement">*</span>
         </div>
-        <nav>
+        <div id="burgerMenuButton" class="burgerMenuButton">|||</div>
+        <nav id="nav">
             <ul id="menu">
                 <li class="pointMenu"><a href="#sliderBlock" class="active">HOME</a></li>
                 <li class="delimiter">·</li>
@@ -32,24 +33,33 @@
         <section id="sliderBlock" class="sliderBlock">
             <div id="slider" class="slider">
                 <div class="slide slide1 active">
-                    <div id="phone1" class="phone phoneLeft">
-                        <div class="phoneLeftBackground"></div>
+                    <div class="wraper">
+                        <div class="wrap">
+                            <div id="phone1" class="phone phoneLeft">
+                                <div class="phoneLeftBackground"></div>
+                            </div>
+                            <div class="phoneLeftShadow"></div>
+                            <div id="phone2" class="phone phoneRight">
+                                <div class="phoneRightBackground"></div>
+                            </div>
+                            <div class="phoneRightShadow"></div>
+                        </div>
                     </div>
-                    <div class="phoneLeftShadow"></div>
-                    <div id="phone2" class="phone phoneRight">
-                        <div class="phoneRightBackground"></div>
-                    </div>
-                    <div class="phoneRightShadow"></div>
+
                 </div>
                 <div class="slide slide2">
-                    <div class="phone phone1">
+                    <div class="wraper">
+                        <div class="wrap">
+                            <div class="phone phone1">
+                            </div>
+                            <div class="phone phone2">
+                            </div>
+                            <div id="phone3" class="phone phone3">
+                                <div class="phoneCenter"></div>
+                            </div>
+                            <div class="phoneCenterShadow"></div>
+                        </div>
                     </div>
-                    <div class="phone phone2">
-                    </div>
-                    <div id="phone3" class="phone phone3">
-                        <div class="phoneCenter"></div>
-                    </div>
-                    <div class="phoneCenterShadow"></div>
                 </div>
             </div>
             <div id="back" class="arrow back"></div>
@@ -254,12 +264,13 @@
                     </p>
                 </section>
                 <section class="formAndContact">
-                    <form class="form"  onsubmit="form();return false">
+                    <form class="form" onsubmit="form();return false">
                         <input id="input-name" class="form-element" type="text" name="name"
                             placeholder="Name (Required)" required>
                         <input id="input-email" class="form-element" type="email" name="email"
                             placeholder="Email (Required)" required>
-                        <input id="input-subject" class="form-element" type="text" name="subject" maxlength="50" placeholder="Subject">
+                        <input id="input-subject" class="form-element" type="text" name="subject" maxlength="50"
+                            placeholder="Subject">
                         <textarea id="input-details" class="form-element" name="details" cols="50" rows="15"
                             placeholder="Describe your project in detail..."></textarea>
                         <button id="submitForm" class="formButton">SEND</button>

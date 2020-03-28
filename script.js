@@ -16,15 +16,36 @@ const INPUT_NAME = document.getElementById('input-name')
 const INPUT_EMAIL = document.getElementById('input-email')
 const INPUT_SUBJECT = document.getElementById('input-subject')
 const INPUT_DETAILS = document.getElementById('input-details')
+const BURGER_MENU_BUTTON = document.getElementById('burgerMenuButton')
+const NAV = document.getElementById('nav')
+const LOGO = document.getElementById('logo')
 
 let SLIDER_ACTIVE_BLOCK = 1
 let SLIDER_ACTIVE_BLOCK_PREW = 1
+let MENU_POSITION = 0
+
+let workExamplesElements = []
+WORK_EXAMPLES.querySelectorAll('li').forEach(el =>  workExamplesElements.push(el.outerHTML))
+
+let shuffle = (arr, position) => {
+    let resultArr = []
+    for(let i = 0; i<arr.length;i++){
+        let j = (position+i) % arr.length
+        resultArr[i] = arr[j]
+    }
+    return resultArr
+}
 
 MENU.addEventListener('click', (event) => {
 
     MENU.querySelectorAll('li > a').forEach(el => { el.classList.remove('active') });
     event.target.classList.add('active');
+    MENU_POSITION = 0
+    NAV.classList.remove('nav0')
+    LOGO.classList.remove('logoPosition')
+    BURGER_MENU_BUTTON.classList.remove('activeMenu')
 })
+
 let sliderLeft = (argument, i) => {
     argument.style.left = i + '%'
 }
@@ -81,61 +102,13 @@ BACK.onclick = () => {
 FILTERS.addEventListener('click', (event) => {
     FILTERS.querySelectorAll('button').forEach(el => el.classList.remove('active'));
     if (event.target.textContent == "All") {
-        WORK_EXAMPLES.innerHTML = `<li><img src="assets/img/portfolio_1.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_2.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_3.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_4.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_5.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_6.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_7.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_8.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_9.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_10.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_11.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_12.jpg" alt="portfolio"></li>
-                    `
+        WORK_EXAMPLES.innerHTML = workExamplesElements
     } else if (event.target.textContent == "Web Design") {
-        WORK_EXAMPLES.innerHTML = `<li><img src="assets/img/portfolio_4.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_5.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_6.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_7.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_8.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_9.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_10.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_11.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_12.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_1.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_2.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_3.jpg" alt="portfolio"></li>
-                    `
+        WORK_EXAMPLES.innerHTML = shuffle(workExamplesElements , 3)
     } else if (event.target.textContent == "Graphic Design") {
-        WORK_EXAMPLES.innerHTML = `<li><img src="assets/img/portfolio_7.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_8.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_9.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_10.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_11.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_12.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_1.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_2.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_3.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_4.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_5.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_6.jpg" alt="portfolio"></li>
-                    `
+        WORK_EXAMPLES.innerHTML = shuffle(workExamplesElements, 6)
     } else if (event.target.textContent == "Artwork") {
-        WORK_EXAMPLES.innerHTML = `<li><img src="assets/img/portfolio_10.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_11.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_12.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_1.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_2.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_3.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_4.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_5.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_6.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_7.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_8.jpg" alt="portfolio"></li>
-                                    <li><img src="assets/img/portfolio_9.jpg" alt="portfolio"></li>
-                    `
+        WORK_EXAMPLES.innerHTML = shuffle(workExamplesElements, 9)
     }
 
     event.target.classList.add('active');
@@ -197,29 +170,51 @@ submitFormOkClose.onclick = () => {
 let onScroll = (ev) => {
     let position = window.scrollY
     let winHeight = document.documentElement.clientHeight
-
+    let scrollHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+      )
 
     document.querySelectorAll('main>section').forEach((el) => {
-        if (winHeight < el.offsetHeight) {
-            if (el.offsetTop <= (position + 95) && (el.offsetTop + el.offsetHeight) > (position + 95)) {
-                MENU.querySelectorAll('li > a').forEach(a => {
-                    a.classList.remove('active')
-                    if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
-                        a.classList.add('active')
-                    }
-                });
-            }
-        } else {
-            if (el.offsetTop - (winHeight - el.offsetHeight) <= (position + 95) && (winHeight - el.offsetHeight + el.offsetTop) > (position + 95) && el.offsetHeight !== 0) {
-                MENU.querySelectorAll('li > a').forEach(a => {
-                    a.classList.remove('active')
-                    if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
-                        a.classList.add('active')
-                    }
-                });
-            }
+        if (position === 0){
+            MENU.querySelectorAll('li > a').forEach(a => {
+                a.classList.remove('active')
+                if (a.innerHTML == 'HOME'){
+                    a.classList.add('active')
+                }
+            });
+        } else if (position === scrollHeight-winHeight) {
+            MENU.querySelectorAll('li > a').forEach(a => {
+                a.classList.remove('active')
+                if (a.innerHTML == 'CONTACT'){
+                    a.classList.add('active')
+                }
+            });
+        } else if (el.offsetTop <= (position + 95) && (el.offsetTop + el.offsetHeight) > (position + 95)) {
+            MENU.querySelectorAll('li > a').forEach(a => {
+                a.classList.remove('active')
+                if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                    a.classList.add('active')
+                }
+            });
         }
     })
 }
 
 document.addEventListener('scroll', onScroll)
+
+BURGER_MENU_BUTTON.addEventListener('click', (event) => {
+    if (MENU_POSITION === 0){
+        MENU_POSITION = 1
+        NAV.classList.add('nav0')
+        BURGER_MENU_BUTTON.classList.add('activeMenu')
+        LOGO.classList.add('logoPosition')
+    } else if (MENU_POSITION === 1){
+        MENU_POSITION = 0
+        NAV.classList.remove('nav0')
+        BURGER_MENU_BUTTON.classList.remove('activeMenu')
+        LOGO.classList.remove('logoPosition')
+    }
+
+})

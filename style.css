@@ -21,6 +21,7 @@
 *{
     margin: 0;
     padding: 0;
+    /* border: 1px solid red; */
 }
 
 a:hover , a {
@@ -33,19 +34,25 @@ li {
 }
 
 html{
+    width: 100%;
+    min-width: 320px;
     height: 100%;
     font-family: "Lato Bold", "Arial", sans-serif;
     color: #666d89;
     background-color: #ffffff;
     scroll-behavior: smooth;
-    
+    margin: 0;
+    padding: 0;
 }
 
 
 body{
-    width: 1020px;
-    min-height: 100%;
-    margin: 0 auto;  
+    max-width: 1020px;
+    min-width: 320px;
+    height: 100%;
+    min-height: 320px;
+    margin: 0 auto; 
+    padding: 0; 
 }
 
 button {
@@ -95,14 +102,18 @@ p {
 }
 
 .content{
-    width: 940px;
+    max-width: 940px;
+    width: 92.1568627%;
+    min-width: 300px;
     margin: 0 auto;
 }
 
 header{
     position: fixed;
-    z-index: 200;
-    width: 1020px;
+    z-index: 2000;
+    max-width: 1020px;
+    width: 100%;
+    min-width: 320px;
     top:0;
     height: 89px;
     color: #ffffff;
@@ -110,15 +121,10 @@ header{
     border-bottom: 6px solid #323746;
 }
 
-header > nav {
-    float: right;
-    margin-top: 38px;
-    margin-right: 35px;
-}
-
 header > .logo{
-    margin-left: 40px;
-    margin-right: 60px;
+    width: 122px;
+    float: left;
+    margin: 0 0 0 40px;
 } 
 
 header > .logo > .logoElement{
@@ -132,6 +138,16 @@ header > .logo > .logoElement{
 
 header > .logo > span {
     color: #f06c64;
+}
+
+.burgerMenuButton{
+    display: none;
+}
+
+header > nav {
+    float: right;
+    margin-top: 38px;
+    margin-right: 35px;
 }
 
 header > nav > ul > .pointMenu, 
@@ -172,22 +188,24 @@ header > nav > ul > .delimiter{
 .sliderBlock > .slide  {
     display: block;
     position: absolute;
-    float: left;
 }
 
 .arrow {
     width: 60px;
     height: 594px;
+    top: 95px;
     background: url(assets/img/arrow.png) no-repeat; 
     cursor: pointer;
 }
 
 .sliderBlock > .back {
+    z-index: 1000;
     left: 40px;
     background-position: 2px 281px;
 }
 
 .sliderBlock > .next {
+    z-index: 1000;
     right: 40px;
     background-position: 0 286px;
     transform: rotate(180deg);
@@ -205,68 +223,81 @@ header > nav > ul > .delimiter{
 
 .sliderBlock > .slider {
     position: relative;
+    height: 100%;
+    overflow: hidden;
 }
+
+.wraper{
+    width: 1000px;
+    margin: 0 auto;
+ }
+
+ .wrap{
+    width: 1000px;
+ }
 
 .sliderBlock > .slider .slide1 {
     position: absolute;
     top:0;
     display: none;
-    width: 820px;
-    padding: 0 100px;
+    width: 100%;
+    padding: 0 auto;
     height: 594px;
     background-color: #f06c64;
+
 }
 
-.sliderBlock > .slider .slide1 > .phone {
+.sliderBlock > .slider .slide1 > .wraper > .wrap > .phone {
     position: relative;
     display: inline-block;
     width: 216px;
     height: 461px;
 }
 
-.sliderBlock > .slider .slide1 > .phoneLeft {
+.sliderBlock .slider .slide1 .wraper .wrap .phoneLeft {
     z-index: 11;
     top: 30px;
-    left: 12px;
+    left: 102px;
     background-repeat: no-repeat;
     background-position: 0 0;
     background-image: url(assets/img/iPhone.png); 
+    
 }
 
-.sliderBlock > .slider .slide1 > .phoneLeftShadow {
+.sliderBlock > .slider .slide1 > .wraper > .wrap > .phoneLeftShadow {
     z-index: 10;
     position: relative;
     display: inline-block;
     width: 240px;
     height: 484px;
     top: 53px;
-    left: -208px;
+    left: -118px;
     background-repeat: no-repeat;
     background-position: 0 0;
     background-image: url(assets/img/iPhoneShadow.png); 
 }
 
-.sliderBlock > .slider .slide1 > .phoneRightShadow {
+.sliderBlock > .slider .slide1 > .wraper > .wrap > .phoneRightShadow {
     position: relative;
     z-index: 10;
     display: inline-block;
     width: 240px;
     height: 484px;
-    top: -435px;
-    left: 447px;
+    top: 51px;
+    left: -149px;
     background: url(assets/img/iPhoneShadow.png) 0 0 no-repeat; 
     transform: rotate(90deg) scale(-1, 1);
 }
 
-.sliderBlock > .slider .slide1 > .phoneRight {
+.sliderBlock > .slider .slide1 > .wraper > .wrap > .phoneRight {
     z-index: 11;
     top: 27px;
-    left: -20px;
+    left: 70px;
     background: url(assets/img/iPhone.png) 0 0 no-repeat; 
     transform: rotate(90deg) scale(-1, 1);
 }
 
-.sliderBlock > .slider .slide1 > .phoneLeft > .phoneLeftBackground  {
+.sliderBlock > .slider .slide1 > .wraper > .wrap > .phoneLeft > .phoneLeftBackground  {
     z-index: 15;
     position: relative;
     top: 65px;
@@ -276,7 +307,7 @@ header > nav > ul > .delimiter{
     background: url(assets/img/background1.jpg) -14px -135px no-repeat; 
 }
 
-.sliderBlock > .slider .slide1 > .phoneRight .phoneRightBackground {
+.sliderBlock > .slider .slide1 > .wraper > .wrap > .phoneRight .phoneRightBackground {
     z-index: 12;
     position: relative;
     top: 137px;
@@ -289,31 +320,30 @@ header > nav > ul > .delimiter{
 
 .sliderBlock > .slider .slide2 {
     display: none;
-    position: absolute;
+    position: relative;
     top:0;
-    width: 820px;
-    padding: 0 100px;
+    width: 100%;
     height: 594px;
     background-color: #648BF0;
 }
 
-.sliderBlock > .slider .slide2 > .phone1,
-.sliderBlock > .slider .slide2 > .phone2 {
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone1,
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone2 {
     position: relative;
     display: inline-block;
     width: 240px;
     height: 484px;
-    top: 53px;
+    top: 68px;
     left: 12px;
     background-repeat: no-repeat;
     background-position: 0 0;
     background-image: url(assets/img/iPhone.png), url(assets/img/iPhoneShadow.png); 
     opacity: 0.5;
-    transform: scale(0.5);
+    transform: scale(0.65);
 }
 
-.sliderBlock > .slider .slide2 > .phone1::after,
-.sliderBlock > .slider .slide2 > .phone2::after {
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone1::after,
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone2::after {
     content: "";
     display: block;
     position: relative;
@@ -324,44 +354,46 @@ header > nav > ul > .delimiter{
     background: url(assets/img/background1.jpg) -14px -135px no-repeat; 
 }
 
-.sliderBlock > .slider .slide2 > .phone3 {
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone3 {
     left: -180px;
 }
 
-.sliderBlock > .slider .slide2 > .phone2 {
-    left: 219px;
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone2 {
+    left: 317px;
 }
 
-.sliderBlock > .slider .slide2 > .phone1 {
-    left: 141px;
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone1 {
+    left: 200px;
 }
 
-.sliderBlock > .slider .slide2 > .phone3 {
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone3 {
     position: relative;
     display: inline-block;
     z-index: 100;
     width: 216px;
     height: 461px;
-    top: 53px;
-    left: -180px;
+    top: 35px;
+    left: -108px;
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-image: url(assets/img/iPhone.png); 
+    background-image: url(assets/img/iPhone.png);
+    transform: scale(1.062); 
 }
 
-.sliderBlock > .slider .slide2 > .phoneCenterShadow {
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phoneCenterShadow {
     position: relative;
     display: inline-block;
     width: 240px;
     height: 484px;
-    top: -411px;
-    left: 308px;
+    top: 58px;
+    left: -329px;
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-image: url(assets/img/iPhoneShadow.png); 
+    background-image: url(assets/img/iPhoneShadow.png);
+    transform: scale(1.062);
 }
 
-.sliderBlock > .slider .slide2 > .phone3 .phoneCenter {
+.sliderBlock > .slider .slide2 > .wraper > .wrap > .phone3 .phoneCenter {
     content: "";
     position: relative;
     top: 65px;
@@ -575,6 +607,7 @@ header > nav > ul > .delimiter{
     display: inline-block;
     width: 300px;
 }
+
 .individual:nth-child(2){
     margin-left: -1px;
     margin-right: 1px;
@@ -870,8 +903,8 @@ footer{
     bottom: 0;
     margin: auto;
     padding: 20px;
-    max-width: 940px;
-    min-width: 335px;
+    max-width: 90%;
+    min-width: 300px;
     height: 230px;
     background-color: #f2f2f2;
     border-bottom: 6px solid #ffffff;
@@ -963,3 +996,502 @@ footer{
       height: 15px;
     }
     }
+
+@media screen and (max-width: 1019px){
+
+    .content{
+        width: 90%;
+        min-width: 310px;
+    }
+    header{
+        height: 89px;
+    }
+    
+    header > .logo > .logoElement{
+
+        margin-top: 29px;
+    }
+    
+    header > nav {
+        margin-top: 36px;
+    }
+    
+    header > nav > ul > .pointMenu, 
+    header > nav > ul > .delimiter{
+        letter-spacing: 0px;
+    }
+    
+    /* ************************* */
+
+    .sliderBlock{
+        height: 445px;
+        padding-top: 95px;
+    }
+    
+    .arrow {
+        height: 452px;
+        top: 95px;
+    }
+
+    .sliderBlock > .back {
+        left: 27px;
+        background-position: 2px 212px;
+    }
+    
+    .sliderBlock > .next {
+        right: 28px;
+        background-position: -1px 213px;
+    }
+
+    .wraper{
+        position: relative;
+        width: 760px;
+
+     }
+
+    .wrap{
+        float: left;
+        transform: scale(0.751);
+        position: absolute;
+        left: -121px;
+        top: -59px;
+    }
+
+    .sliderBlock > .slider .slide1 > .wraper > .wrap > .phoneLeftShadow {
+        left: -117px;
+    }
+
+    .sliderBlock > .slider .slide1 > .wraper > .wrap > .phoneRightShadow {
+        top: 54px;
+        left: -146px;
+    }
+
+    .sliderBlock > .slider .slide1 > .wraper > .wrap > .phoneRight {
+        top: 29px;
+        left: 71px;
+    }
+    /* ************************* */
+    
+    .aboutService {
+        height: 120px;
+        padding-top: 40px;
+    }
+
+    .services{
+        min-height: 668px;
+        height: auto;
+    }
+
+    .point {
+        overflow: hidden;
+        width: calc((100%/2) - 7px);
+        height: 144px;
+        font-size: 12px;
+    }
+
+    .point .pointDescription {
+        float: none;
+        margin-left: 21px;
+        min-width: 220px;
+        width: calc((100% - 130px));
+    }
+
+    .point .pointLogo {
+        margin-top: 12px;
+        vertical-align: top;
+    }
+
+    .point:nth-child(1n) .pointLogo {
+        margin-left: 4px;
+        vertical-align: top;
+    }
+
+    /* ************************* */
+
+    .portfolio{
+        height: auto;
+        min-height: 1038px;
+    }
+
+    .portfolioDescription {
+        height: 122px;
+
+    }
+
+    .workExamples > ul {
+        display: flex;
+        height: auto;
+        width: calc(100%);
+        padding: 5px;
+        margin-top: 22px;
+        margin-left: -5px;
+    }
+    
+    .workExamples > ul > li{
+        margin-bottom: 18px;
+        width: calc(100%/3 - 15px);
+        height: auto;
+        overflow: hidden;
+    }
+    
+    .workExamples > ul > li > img{
+        width: 100%;
+        height: auto;
+    }
+    .workExamples > ul > li > .active {
+        border: none;
+        outline: 5px solid #F06C64;
+        transform: scale(0.96);
+        margin-left: 0px;
+        margin-top: 0px;
+        outline-offset: 0px;
+    }
+    /* ************************* */
+    
+    .aboutUs {
+        min-height: 611px;
+        height: auto;
+        padding-top: 52px;
+        background-color: #f2f2f2;
+        border-bottom: 6px solid #ffffff;
+    }
+
+    .aboutUs .aboutUsAll {
+        margin-bottom: 31px;
+    }
+
+    .individual{
+        width: calc((100% - 40px)/3 );
+    }
+    
+    .individual .individualPhoto {
+        width: 100%;
+        height: auto;
+    }
+
+    .individual .individualPhoto img{
+        width: 100%;
+        height: auto;
+    }
+
+    /* ************************* */
+    .getAQuote {
+        height: 571px;
+        padding-top: 54px;
+    }
+    .getAQuoteDescription {
+        height: 143px;
+    }
+
+    .form-element {
+        margin-bottom: 12px;
+    }
+
+    .formAndContact .form{
+        width: 60%;
+        margin-top: 25px;
+    }
+    .formAndContact .form > textarea {
+        height: 151px;
+    }
+
+    .formButton {
+        margin-top: 17px;
+    }
+
+    .contactInformation{
+        width: 32%;
+        margin-top: 23px;
+    }
+    
+    .contactInformation > p {
+        height: 125px;
+        margin-top: 1px;
+    }
+
+   
+}
+
+@media screen and (max-width: 767px){
+
+
+    .content {
+        width: 83%;
+    }
+
+    header{
+        height: 65px;
+    }
+
+    
+    header > .logo{
+        display: block;
+        position: absolute;
+        z-index: 3000;
+        left: 13px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 93px;
+        
+    }
+    
+    header > .logoPosition{
+        left: 71px;
+        margin: 0;
+        transition: 0.5s;
+    }
+
+    header > .logo > .logoElement {
+        margin-top: 24px;
+        font-size: 20px;
+    }
+
+    header > nav {
+        float: left;
+        display: block;
+        position: fixed;
+        left: -277px;
+        height: 100%;
+        width: 277px;
+        margin-top: 0;
+        margin-right: 0;
+        background-color: #2d303a;
+        transition: 0.5s;;
+    }
+    
+    .nav0{
+        left: 0;
+        box-shadow: 1px 0 27px 1px black;
+    }
+    
+    .burgerMenuButton{
+        display: block;
+        position: fixed;
+        left: 14px;
+        top: 16px;
+        padding: 5px 8px;
+        z-index: 3000;
+        transform: rotate(90deg);
+        transition: 0.5s;
+        cursor: pointer;
+        font-size: 26px;
+        font-family: "Lato Regular";
+        letter-spacing: 2.5px;
+    }
+    
+    .activeMenu{
+        transform: rotate(0deg);
+        color: #f06c64;
+        letter-spacing: 3px;
+        transition: 0.5s;
+    }
+
+
+    header > nav > ul{
+       display: block;
+       position: absolute;
+       width: 160px;
+       height: 343px;
+       left: 13px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    header > nav > ul > .pointMenu, 
+    header > nav > ul > .delimiter{
+        font-family: 'lato Regular';
+        font-size: 24px;
+        display: block;
+        margin-bottom: 29px;
+    }
+    
+    header > nav > ul > .delimiter{
+        display: none;
+    }
+
+
+
+    /* ********************************** */
+
+    .sliderBlock {
+        height: 215px;
+        padding-top: 71px;
+    }
+
+    .sliderBlock > .slider .slide1 {
+        height: 215px;
+    }
+
+
+    .wraper{
+        width: 310px;
+    }
+
+    .wrap{
+        top: -153px;
+        left: -346px;
+        transform: scale(0.367);
+    }
+
+    .arrow {
+        height: 215px;
+        width: 30px;
+        top: 72px;
+    }
+
+    .sliderBlock > .back {
+        left: 0px;
+        background-position: 8px 95px;
+    }
+
+    .sliderBlock > .next {
+        right: 0px;
+        background-position: 8px 93px;
+    }
+    
+    /* ********************************** */
+
+
+    .aboutService {
+        height: 231px;
+        padding-top: 25px;
+    }
+    .point {
+        width: 100%;
+        height: 120px;
+    }
+
+
+
+
+    /* ********************************** */
+
+    .portfolio{
+        padding-top: 42px;
+        min-height: 795px;
+    }
+
+    .portfolioDescription {
+        height: 154px;
+
+    }
+
+    .workExamples > ul {
+        width: 100%;
+        height: 0px;
+        padding-bottom: calc(172% + 22px);;
+        margin-bottom: 20px;
+    }
+    
+    .workExamples > ul > li{
+        margin-bottom: 10px;
+        width: calc(100%/2 - 5px);
+    }
+    
+    /* ********************************** */
+
+    .aboutUs {
+        height: auto;
+        padding-top: 33px;
+        min-height: 1715px;
+    }
+
+    .aboutUs .aboutUsAll {
+        height: 257px;
+    }
+
+    .individual {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 29px;
+    }
+
+    .individual:nth-child(2) {
+        margin: 0 auto 29px;
+    }
+    
+    .aboutUs .aboutIndividual{
+        display: block;
+    }
+
+    .individual .aboutPerson {
+        height: 95px;
+    }
+
+    .aboutUs .aboutIndividual .individual{
+        display: block;
+    }
+
+
+     /* ********************************** */
+
+    .getAQuote {
+        height: 918px;
+        padding-top: 44px;
+        
+    }
+
+    .getAQuoteDescription {
+        height: 256px;
+    }
+
+    .formAndContact .form,
+    .contactInformation{
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .form-element {
+        display: block;
+        width: calc(100% - 28px);
+    }
+
+    .contactInformation > p {
+        height: 100px;
+    }
+    
+    .contactInformation ul {
+        margin-top: 0px;
+    }
+
+    .contactInformation ul li {
+        margin-bottom: 3px;
+    }
+
+    .copyright{
+        display: none;
+    }
+    
+    .footerElement.links {
+        padding-top: 22px;
+        width: 152px;
+        display: block;
+        float: none;
+        margin: 0 auto ;
+    }
+
+    .formButton {
+        width: 100%;
+        margin-top: 14px;
+        height: 50px;
+    }
+
+    @media screen and (max-width: 374px){
+
+        .wrap{
+            top: -153px;
+            left: -346px;
+            transform: scale(0.3);
+        }
+    }
+
+
+
+
+
+}
